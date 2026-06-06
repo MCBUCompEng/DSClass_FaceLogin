@@ -3,6 +3,7 @@ the Project of Logging on your own PC using your face
 
 📂 Repository Structure
 You should organize your template repository with the following files:
+<pre>
 ├── .github/
 │   └── workflows/
 │       └── classroom.log  # (Optional) For autograding setups
@@ -16,3 +17,4 @@ You should organize your template repository with the following files:
 │       └── anchor.jpg     # Placeholder target face
 ├── requirements.txt       # Project dependencies
 └── README.md              # Project instructions and student documentation
+</pre>
