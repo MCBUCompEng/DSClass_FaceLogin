@@ -30,9 +30,10 @@ Your task is to build a secure, real-time local authentication system using Pyth
 
 ### 1. Prerequisites & Installation
 Ensure you have Python 3.9+ installed. Clone this repository and install the required library frameworks:
-
+<pre>
 ```bash
 pip install -r requirements.txt
+</pre>
 
 ### 2. Setup Your Reference Profile
 
