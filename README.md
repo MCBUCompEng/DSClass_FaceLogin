@@ -18,3 +18,53 @@ You should organize your template repository with the following files:
 ├── requirements.txt       # Project dependencies
 └── README.md              # Project instructions and student documentation
 </pre>
+
+# Assignment: Face Recognition Based Login System using MediaPipe
+
+## Objective
+Your task is to build a secure, real-time local authentication system using Python, OpenCV, and the **MediaPipe** library. The system must process an active webcam stream, detect when a user is in front of the screen, and match their facial features against an authorized local profile directory to grant or deny access.
+
+---
+
+## Getting Started
+
+### 1. Prerequisites & Installation
+Ensure you have Python 3.9+ installed. Clone this repository and install the required library frameworks:
+
+```bash
+pip install -r requirements.txt
+
+### 2. Setup Your Reference Profile
+
+Before running the code, add a clear picture of your face to the authorized users directory:
+
+    Save your image inside data/known_faces/
+
+    Name the file with your name (e.g., john_doe.jpg). The system will parse the filename as the authorized user ID.
+
+Tasks to Implement
+
+You need to complete the following tasks marked with TODO in the source code:
+Task Group A: Face Detection (src/detector.py)
+
+    Initialize the MediaPipe Pipeline: Configure the MediaPipe face solutions class with optimal parameters for real-time inference.
+
+    Frame Preprocessing: Correctly map the frame color space channels to meet MediaPipe's expectations.
+
+    Bounding Box Isolation: Parse the solution output to isolate coordinates for the primary face in the frame.
+
+Task Group B: Verification Logic (src/recognizer.py)
+
+    Anchor Database Setup: Read images from data/known_faces/, extract reference markers, and index them into memory.
+
+    Distance Metrics: Implement a matching threshold metric (e.g., Euclidean distance or geometric landmark ratio matching) to verify if the active user matches the reference identity.
+
+Task Group C: UI and States (src/main.py)
+
+    Visual Overlays: Render bounding boxes, feature tracking points, and state text directly onto the live OpenCV window.
+
+    System Authentication Actions: Design an access-granted state flow. (Optional enhancement: simulate triggering an OS login or locking mechanism when an unauthorized face stays active for too long).
+
+Running the Project
+
+Run the application using:
