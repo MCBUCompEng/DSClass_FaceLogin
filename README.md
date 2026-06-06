@@ -42,29 +42,35 @@ Before running the code, add a clear picture of your face to the authorized user
 
     Name the file with your name (e.g., john_doe.jpg). The system will parse the filename as the authorized user ID.
 
-Tasks to Implement
+### 3. Tasks to Implement
 
 You need to complete the following tasks marked with TODO in the source code:
+
 Task Group A: Face Detection (src/detector.py)
 
-    Initialize the MediaPipe Pipeline: Configure the MediaPipe face solutions class with optimal parameters for real-time inference.
-
-    Frame Preprocessing: Correctly map the frame color space channels to meet MediaPipe's expectations.
-
-    Bounding Box Isolation: Parse the solution output to isolate coordinates for the primary face in the frame.
+1. Initialize the MediaPipe Pipeline: Configure the MediaPipe face solutions class with optimal parameters for real-time inference.
+2. Frame Preprocessing: Correctly map the frame color space channels to meet MediaPipe's expectations.
+3.Bounding Box Isolation: Parse the solution output to isolate coordinates for the primary face in the frame.
 
 Task Group B: Verification Logic (src/recognizer.py)
 
-    Anchor Database Setup: Read images from data/known_faces/, extract reference markers, and index them into memory.
-
-    Distance Metrics: Implement a matching threshold metric (e.g., Euclidean distance or geometric landmark ratio matching) to verify if the active user matches the reference identity.
+4. Anchor Database Setup: Read images from data/known_faces/, extract reference markers, and index them into memory.
+5. Distance Metrics: Implement a matching threshold metric (e.g., Euclidean distance or geometric landmark ratio matching) to verify if the active user matches the reference identity.
 
 Task Group C: UI and States (src/main.py)
 
-    Visual Overlays: Render bounding boxes, feature tracking points, and state text directly onto the live OpenCV window.
-
-    System Authentication Actions: Design an access-granted state flow. (Optional enhancement: simulate triggering an OS login or locking mechanism when an unauthorized face stays active for too long).
+6. Visual Overlays: Render bounding boxes, feature tracking points, and state text directly onto the live OpenCV window.
+7. System Authentication Actions: Design an access-granted state flow. (Optional enhancement: simulate triggering an OS login or locking mechanism when an unauthorized face stays active for too long).
 
 Running the Project
 
 Run the application using:
+<pre>
+python src/main.py
+</pre>
+
+### Evaluation Criteria
+
+* Accuracy: Does the system reliably authorize the registered profile and block unknown users?
+* Edge-Case Resilience: How does the loop handle frames with missing faces, multiple users, or extreme angles?
+* Code Quality: Adherence to functional clarity, documentation, clean separation of concerns, and efficient processing logic.
